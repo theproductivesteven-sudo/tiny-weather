@@ -1,15 +1,54 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Tiny Weather App Design</title>
-    </head>
-
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#9333EA" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tiny Weather" />
+    
+    <!-- App Meta -->
+    <meta name="description" content="Weather insights for parents. Know what your kids should wear and when to go outside." />
+    <meta name="keywords" content="weather, parent, kids, outfit, clothing, outdoor, activities" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tiny Weather" />
+    <meta property="og:description" content="Weather insights for parents" />
+    <meta property="og:type" content="website" />
+    
+    <title>Tiny Weather</title>
+    
+    <!-- Prevent pull-to-refresh on mobile -->
+    <style>
+      html, body {
+        overscroll-behavior: none;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      #root {
+        height: 100%;
+        width: 100%;
+      }
+      
+      /* Safe areas for notched devices */
+      .safe-area-top {
+        padding-top: env(safe-area-inset-top);
+      }
+      .safe-area-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
